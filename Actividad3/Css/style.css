@@ -5,12 +5,22 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
+  
+  
+}
+.linea {
+  margin-top: 20px;  
+    width: 100%;
+    height: 2px;
+    background-color: gray  
+  
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 .logo {
@@ -85,9 +95,14 @@ body {
   top: 20px;
   left: 20px;
 }
-.producto-precio {
+.hijo-producto__precio {
   font-weight: 800;
   font-size: 1.6em;
+}
+.producto-precio__container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 @media (min-width: 768px) {
   .padre-producto {
