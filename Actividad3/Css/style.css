@@ -8,10 +8,18 @@ body {
 }
 .linea {
   margin-top: 20px;
+  width: 100vw; 
+  height: 2px;
+  background-color: gray;
+  position: relative; 
+  left: 0; 
+}
+/* .linea {
+  margin-top: 20px;
   width: 100%;
   height: 2px;
   background-color: gray;
-}
+} */
 
 .header {
   display: flex;
