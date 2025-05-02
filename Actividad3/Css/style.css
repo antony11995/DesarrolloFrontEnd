@@ -117,7 +117,36 @@ body {
   align-items: center;
   gap: 20px;
 }
-.padre-producto__enviosydevoluciones{
+.padre-producto__enviosinfo {
+  display: flex;
+  flex-wrap: wrap; /* Stack items vertically by default (mobile-first) */
+  gap: 20px; /* Space between items */
+  width: 100%; /* Parent takes up 65% of the container */
+  margin: 0 auto; /* Center the parent container */
+}
+
+.enviosinfo-item {
+  flex-basis: calc(50% - 10px); /*cada item tomará el 50% del width restando el gap*/
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+}
+.enviosinfo-item:nth-child(3) {
+  flex-basis: calc(50% - 10px); /*Aqui lo repito para que el texto del último div no tome 
+  todo el ancho que tiene disponible sino que mantenga el parrafo como sus hermanos */
+}
+
+/* .enviosinfo-item img {
+  width: 25px; 
+  height: 25px;
+} */
+
+.enviosinfo-item p {
+  margin: 0; /* Remove default margin from paragraph */
+  font-size: 0.9rem; /* Adjust text size */
+}
+
+/* .padre-producto__enviosydevoluciones{
   display: flex; 
   justify-content: left;
   gap: 20px;
@@ -139,7 +168,7 @@ body {
 }
 .padre-producto__enviosydevoluciones p {  
   font-size: 1rem;
-}
+} */
 
 @media (min-width: 768px) {
   .padre-producto {
@@ -150,12 +179,23 @@ body {
     flex-basis: 50%;
     min-width: 300px;
   }
+  .padre-producto__enviosinfo {
+    flex-wrap: nowrap;
+    justify-content: space-between; 
+    
+  }
+  .enviosinfo-item {
+    flex-basis: auto;
+  }
+  .enviosinfo-item:nth-child(3) {
+    flex-basis: auto; 
+    order: 3; 
+  }
+
 }
 @media (max-width: 768px) {
   .principal-nav {
     display: none;
   }
-  .padre-producto__enviosydevoluciones{
-    flex-wrap: wrap;
-  }
+  
 }
