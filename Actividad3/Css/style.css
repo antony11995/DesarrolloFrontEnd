@@ -132,44 +132,71 @@ body {
   gap: 10px; 
 }
 .enviosinfo-item:nth-child(3) {
-  flex-basis: calc(50% - 10px); /*Aqui lo repito para que el texto del último div no tome 
-  todo el ancho que tiene disponible sino que mantenga el parrafo como sus hermanos */
+  flex-basis: calc(50% - 10px); /*Aqui repito este fragmento de código para que el texto del último div no tome 
+  todo el ancho que tiene disponible sino que mantenga el párrafo como sus hermanos */
 }
-
-/* .enviosinfo-item img {
-  width: 25px; 
-  height: 25px;
-} */
 
 .enviosinfo-item p {
-  margin: 0; /* Remove default margin from paragraph */
-  font-size: 0.9rem; /* Adjust text size */
+  margin: 0; 
+  font-size: 0.9rem; 
 }
 
-/* .padre-producto__enviosydevoluciones{
-  display: flex; 
-  justify-content: left;
-  gap: 20px;
-}
-.hijo-producto__enviosydevoluciones-infoenvios  {
-  display: flex;
-  flex-direction: row;
-  
-}
-.hijo-producto__enviosydevoluciones-infodevolucion{
-  display: flex;
-  flex-direction: row;
-  
-}
-.hijo-producto__enviosydevoluciones-infopago{
-  display: flex;
-  flex-direction: row;
- 
-}
-.padre-producto__enviosydevoluciones p {  
-  font-size: 1rem;
-} */
 
+.accesorios-recomendados {
+  font-family: Arial, sans-serif;
+  padding: 1rem;
+}
+
+.accesorios-recomendados h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.grid-accesorios {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;  
+  align-items: stretch;
+} 
+
+ .accesorio {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fff;  
+  text-align: left;
+} 
+.accesorio h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  word-wrap: break-word; /* Ensure long words break properly */
+  overflow-wrap: break-word; /* Modern equivalent for word wrapping */
+  white-space: normal; /* Allow text to wrap naturally */
+  text-align: left;
+}
+
+.accesorio p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.etiqueta {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.etiqueta.oferta {
+  background-color: red;
+  color: white;
+}
+.etiqueta.nuevo {
+  background-color: #3498db;
+  color: #fff;
+}
 @media (min-width: 768px) {
   .padre-producto {
     flex-direction: row;
@@ -191,11 +218,16 @@ body {
     flex-basis: auto; 
     order: 3; 
   }
+  .grid-accesorios {
+    grid-template-columns: repeat(4, 1fr); /* Two items per row */
+    gap: 2rem;
+  }
 
 }
 @media (max-width: 768px) {
   .principal-nav {
     display: none;
   }
+  
   
 }
