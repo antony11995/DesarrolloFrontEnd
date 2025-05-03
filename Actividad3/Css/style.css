@@ -8,18 +8,12 @@ body {
 }
 .linea {
   margin-top: 20px;
-  width: 100vw; 
+  width: 100vw;
   height: 2px;
   background-color: gray;
-  position: relative; 
-  left: 0; 
+  position: relative;
+  left: 0;
 }
-/* .linea {
-  margin-top: 20px;
-  width: 100%;
-  height: 2px;
-  background-color: gray;
-} */
 
 .header {
   display: flex;
@@ -30,7 +24,6 @@ body {
 .logo {
   font-size: 1.5rem;
   padding-left: 20px;
-  /*font-family: Arial, Helvetica, sans-serif;*/
   font-weight: bold;
   color: black;
 }
@@ -52,7 +45,7 @@ body {
 .principal-nav a.contactar {
   border: 1px solid gray;
   border-radius: 5px;
-  padding: 8px 8px 8px 8px;
+  padding: 8px;
 }
 .padre-producto {
   display: flex;
@@ -65,14 +58,6 @@ body {
 .hijo-producto__img {
   position: relative;
   flex-grow: 2;
-  /* display: flex;
-  background-color: #f0f0f0;
-  height: 400px;
-  border: 20px;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  flex-grow: 1; */
 }
 .placehold {
   max-width: 100%;
@@ -93,7 +78,7 @@ body {
 }
 .producto-capacidad {
   display: inline-block;
-  padding: 0.5rem;
+  padding: 8px;
   background: green;
   color: white;
   position: absolute;
@@ -105,7 +90,7 @@ body {
   font-size: 1.6em;
 }
 .hijo-producto__btncomprar {
-  background-color: #0066FF;
+  background-color: #0066ff;
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -119,60 +104,58 @@ body {
 }
 .padre-producto__enviosinfo {
   display: flex;
-  flex-wrap: wrap; /* Stack items vertically by default (mobile-first) */
-  gap: 20px; /* Space between items */
-  width: 100%; /* Parent takes up 65% of the container */
-  margin: 0 auto; /* Center the parent container */
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .enviosinfo-item {
   flex-basis: calc(50% - 10px); /*cada item tomará el 50% del width restando el gap*/
   display: flex;
-  align-items: center; 
-  gap: 10px; 
+  align-items: center;
+  gap: 10px;
 }
 .enviosinfo-item:nth-child(3) {
-  flex-basis: calc(50% - 10px); /*Aqui repito este fragmento de código para que el texto del último div no tome 
-  todo el ancho que tiene disponible sino que mantenga el párrafo como sus hermanos */
+  flex-basis: calc(50% - 10px);
 }
 
 .enviosinfo-item p {
-  margin: 0; 
-  font-size: 0.9rem; 
+  margin: 0;
+  font-size: 0.9rem;
 }
-
 
 .accesorios-recomendados {
   font-family: Arial, sans-serif;
-  padding: 1rem;
+  padding: 16px;
 }
 
 .accesorios-recomendados h2 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   text-align: left;
 }
 
 .grid-accesorios {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;  
+  gap: 32px;
   align-items: stretch;
-} 
+}
 
- .accesorio {
+.accesorio {
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 1rem;
-  background-color: #fff;  
+  padding: 16px;
+  background-color: #fff;
   text-align: left;
-} 
+}
 .accesorio h3 {
   font-size: 1.2rem;
-  margin: 0.5rem 0;
-  word-wrap: break-word; /* Ensure long words break properly */
-  overflow-wrap: break-word; /* Modern equivalent for word wrapping */
-  white-space: normal; /* Allow text to wrap naturally */
+  margin: 8px 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
   text-align: left;
 }
 
@@ -183,10 +166,10 @@ body {
 
 .etiqueta {
   display: inline-block;
-  padding: 0.2rem 0.5rem;
+  padding: 4px 8px;
   font-size: 0.8rem;
   border-radius: 4px;
-  margin-top: 0.5rem;
+  margin-top: 8px;
 }
 
 .etiqueta.oferta {
@@ -201,9 +184,9 @@ body {
 .padre-sorteo {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 16px;
   background-color: #f5f9ff;
-  padding: 1.5rem;
+  padding: 24px;
   border-radius: 8px;
 }
 
@@ -213,46 +196,48 @@ body {
 
 .sorteo-info h2 {
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
 .sorteo-info p {
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
 .sorteo-form form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 .sorteo-form label {
   font-size: 0.9rem;
   font-weight: bold;
+  margin-top: 10px;
 }
 
 .sorteo-form input {
-  padding: 0.5rem;
+  padding: 8px;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 .sorteo-form button {
-  padding: 0.5rem;
+  padding: 8px;
   font-size: 1rem;
   color: #fff;
   background-color: #007bff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  width: 75px;
+  margin-top: 20px;
 }
 
 .sorteo-form button:hover {
   background-color: #0056b3;
 }
-
 
 @media (min-width: 768px) {
   .padre-producto {
@@ -265,28 +250,28 @@ body {
   }
   .padre-producto__enviosinfo {
     flex-wrap: nowrap;
-    justify-content: space-between; 
-    
+    justify-content: space-between;
   }
   .enviosinfo-item {
     flex-basis: auto;
   }
   .enviosinfo-item:nth-child(3) {
-    flex-basis: auto; 
-    order: 3; 
+    flex-basis: auto;
+    order: 3;
   }
   .grid-accesorios {
-    grid-template-columns: repeat(4, 1fr); /* Two items per row */
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
   }
   .padre-sorteo {
     flex-direction: row;
     align-items: center;
+    gap: 32px;
   }
 
   .sorteo-info {
     flex-grow: 1;
-    padding-right: 2rem;
+    padding-right: 32px;
   }
 
   .sorteo-info h2 {
@@ -298,14 +283,11 @@ body {
   }
 
   .sorteo-form {
-    flex-basis: 300px;
+    flex-basis: 50%;
   }
-
 }
 @media (max-width: 768px) {
   .principal-nav {
     display: none;
   }
-  
-  
 }
