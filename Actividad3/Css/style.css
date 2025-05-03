@@ -58,8 +58,7 @@ body {
   flex-direction: column;
   margin: 20px;
   gap: 40px;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;  
 }
 .hijo-producto__img {
   position: relative;
@@ -132,10 +131,8 @@ body {
 }
 
 .accesorios-recomendados {
-  font-family: Arial, sans-serif;
   padding: 16px;
 }
-
 .accesorios-recomendados h2 {
   font-size: 1.5rem;
   margin-bottom: 16px;
