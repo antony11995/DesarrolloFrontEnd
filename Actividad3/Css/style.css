@@ -1,5 +1,6 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif; /*será la única declaración de font-family
+  porque los elementos de texto ubucados en el body heredarán este tipado de fuente*/
 }
 .wrapper {
   max-width: 1440px;
@@ -30,6 +31,11 @@ body {
 .logo {
   font-size: 1.5rem;
   padding-left: 20px;
+  font-weight: bold;
+  color: black;
+}
+.logo-footer {
+  font-size: 1.1rem;
   font-weight: bold;
   color: black;
 }
