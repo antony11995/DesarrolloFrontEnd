@@ -1,0 +1,303 @@
+/* Autor: Antony Yesid Martinez Villalba*/
+body {
+  font-family: Arial, Helvetica, sans-serif; /*será la única declaración de font-family
+  porque los elementos de texto ubucados en el body heredarán este tipado de fuente*/
+}
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.linea {
+  margin-top: 20px;
+  width: 100vw;
+  height: 2px;
+  background-color: gray;
+  position: relative;
+  left: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.logo {
+  font-size: 1.5rem;
+  padding-left: 20px;
+  font-weight: bold;
+  color: black;
+}
+.logo-footer {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: black;
+}
+.principal-nav {
+  display: flex;
+}
+.principal-nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+.principal-nav__list a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: black;
+}
+.principal-nav a.contactar {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 8px;
+}
+.padre-producto {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  gap: 40px;
+  box-sizing: border-box;  
+}
+.hijo-producto__img {
+  position: relative;
+  flex-grow: 2;
+}
+.placehold {
+  max-width: 100%;
+}
+.hijo-producto__info {
+  margin: 0;
+  flex-grow: 3;
+}
+.hijo-producto__info h4 {
+  color: red;
+  font-weight: 800;
+  margin: 0;
+}
+.hijo-producto__info h1 {
+  font-weight: 800;
+  margin-top: 8px;
+  font-size: 1.6rem;
+}
+.producto-capacidad {
+  display: inline-block;
+  padding: 8px;
+  background: green;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.hijo-producto__precio {
+  font-weight: 800;
+  font-size: 1.6em;
+}
+.hijo-producto__btncomprar {
+  background-color: #0066ff;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.producto-precio__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.padre-producto__enviosinfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.enviosinfo-item {
+  flex-basis: calc(50% - 10px); /*cada item tomará el 50% del width restando el gap*/
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.enviosinfo-item:nth-child(3) {
+  flex-basis: calc(50% - 10px);
+}
+
+.enviosinfo-item p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.accesorios-recomendados {
+  padding: 16px;
+}
+.accesorios-recomendados h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.grid-accesorios {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.accesorio {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #fff;
+  text-align: left;
+}
+.accesorio h3 {
+  font-size: 1.2rem;
+  margin: 8px 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  text-align: left;
+}
+
+.accesorio p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.etiqueta {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.etiqueta.oferta {
+  background-color: red;
+  color: white;
+}
+.etiqueta.nuevo {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.padre-sorteo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #f5f9ff;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.sorteo-info {
+  flex-grow: 1;
+}
+
+.sorteo-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.sorteo-info p {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.sorteo-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sorteo-form label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.sorteo-form input {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.sorteo-form button {
+  padding: 8px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 75px;
+  margin-top: 20px;
+}
+
+.sorteo-form button:hover {
+  background-color: #0056b3;
+}
+
+@media (min-width: 768px) {
+  .padre-producto {
+    flex-direction: row;
+  }
+  .hijo-producto__img {
+    flex-grow: 0;
+    flex-basis: 50%;
+    min-width: 300px;
+  }
+  .padre-producto__enviosinfo {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  .enviosinfo-item {
+    flex-basis: auto;
+  }
+  .enviosinfo-item:nth-child(3) {
+    flex-basis: auto;
+    order: 3;
+  }
+  .grid-accesorios {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  .padre-sorteo {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .sorteo-info {
+    flex-grow: 1;
+    padding-right: 32px;
+  }
+
+  .sorteo-info h2 {
+    font-size: 2rem;
+  }
+
+  .sorteo-info p {
+    font-size: 1.1rem;
+  }
+
+  .sorteo-form {
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 768px) {
+  .principal-nav {
+    display: none;
+  }
+}
