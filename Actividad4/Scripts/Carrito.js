@@ -1,57 +1,44 @@
 class Carrito {
     constructor(productos) {
+        this.productos = productos;
+        this.carrito = {};
     }
 
     actualizarUnidades(sku, unidades) {
-      // Actualiza el número de unidades que se quieren comprar de un producto
+        if (unidades > 0) {
+            this.carrito[sku] = unidades;
+        } else {
+            delete this.carrito[sku];
+        }
     }
 
     obtenerInformacionProducto(sku) {
-      // Devuelve los datos de un producto además de las unidades seleccionadas
-      // Por ejemplo
-      // {
-      //   "sku": "0K3QOSOV4V",
-      //   "quantity": 3
-      // } 
+        if (this.carrito[sku]) {
+            return { sku: sku, quantity: this.carrito[sku] };
+        }
+        return null;
     }
 
     obtenerCarrito() {
-      // Devuelve información de los productos añadidos al carrito
-      // Además del total calculado de todos los productos
-      // Por ejemplo:
-      // {
-      //   "total": "5820",
-      //   "currency: "€",
-      //   "products" : [
-      //     {
-      //       "sku": "0K3QOSOV4V"
-      //       ..
-      //     }
-      //    ]}
-      // }
+        let total = 0;
+        let products = [];
+        for (const sku in this.carrito) {
+            const producto = this.productos.find(p => p.sku === sku);
+            if (producto) {
+                const quantity = this.carrito[sku];
+                total += producto.precio * quantity;
+                products.push({
+                    sku: sku,
+                    quantity: quantity,
+                    nombre: producto.nombre,
+                    precio: producto.precio
+                });
+            }
+        }
+        return {
+            total: total.toFixed(2),
+            currency: '€',
+            products: products
+        };
     }
-
-    /* constructor() {
-        this.items = [];
-    }
-
-    agregarProducto(producto) {
-        this.items.push(producto);
-    }
-
-    eliminarProducto(id) {
-        this.items = this.items.filter(item => item.id !== id);
-    }
-
-    calcularTotal() {
-        return this.items.reduce((total, item) => total + item.precio, 0);
-    }
-
-    mostrarCarrito() {
-        console.log("Carrito de Compras:");
-        this.items.forEach(item => {
-            console.log(`Producto: ${item.nombre}, Precio: $${item.precio}`);
-        });
-        console.log(`Total: $${this.calcularTotal()}`);
-    } */
 }
