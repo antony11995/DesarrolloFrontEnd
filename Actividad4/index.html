@@ -15,14 +15,14 @@
     </header>
     <div class="linea"></div>
     <div class="carrito-container">
-      <div style="flex: 2;">
+      <div class="flex-2">
         <table class="carrito-table">
           <thead>
             <tr>
-              <th style="text-align: left;">Producto</th>
-              <th style="text-align: center;">Cantidad</th>
-              <th style="text-align: right;">Unidad</th>
-              <th style="text-align: right;">Total</th>
+              <th class="text-left">Producto</th>
+              <th class="text-center">Cantidad</th>
+              <th class="text-right">Unidad</th>
+              <th class="text-right">Total</th>
             </tr>
           </thead>
           <tbody id="productos-tbody">
@@ -30,7 +30,7 @@
           </tbody>
         </table>
       </div>
-      <div style="flex: 1;">
+      <div class="flex-1">
         <div class="resumen-total">
           <h2>Total</h2>
           <hr />
@@ -47,12 +47,12 @@
           <div class="nombre-producto"></div>
           <div class="sku-producto"></div>
         </td>
-        <td style="text-align: center;">
+        <td class="text-center">
           <button class="btn-menos" data-sku="">-</button>
           <input type="text" class="input-cantidad" data-sku="" value="0" readonly />
           <button class="btn-mas" data-sku="">+</button>
         </td>
-        <td class="precio-producto" style="text-align: right;"></td>
+        <td class="precio-producto text-right"></td>
         <td><span class="total-producto" data-sku="">0€</span></td>
       </tr>
     </template>
