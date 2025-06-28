@@ -32,7 +32,7 @@ class Carrito {
                 products.push({
                     sku: sku,
                     quantity: quantity,
-                    nombre: producto.nombre || producto.title,
+                    nombre: producto.title,
                     precio: producto.precio !== undefined ? producto.precio : parseFloat(producto.price)
                 });
                 total += (producto.precio !== undefined ? producto.precio : parseFloat(producto.price)) * quantity;
