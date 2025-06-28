@@ -30,7 +30,89 @@ body {
   color: black;
 }
 
+.carrito-container {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
 
+.carrito-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.carrito-table tr {
+  border-bottom: 1px solid #eee;
+}
+
+.carrito-table td {
+  padding: 24px 0 16px 0;
+  vertical-align: top;
+}
+
+.carrito-table td.total-producto,
+.carrito-table th:last-child {
+  width: 120px;
+  min-width: 100px;
+  text-align: right;
+}
+
+.carrito-table th {
+  padding-bottom: 12px;
+}
+
+.resumen-total {
+  background: #fafafa;
+  padding: 32px 24px;
+  border-radius: 4px;
+  min-width: 220px;
+}
+
+.resumen-total h2 {
+  margin-top: 0;
+}
+
+.resumen-total hr {
+  margin: 0.5em 0;
+}
+
+.resumen-total .total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.nombre-producto {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+.sku-producto {
+  font-size: 1.05em;
+  color: #555;
+  margin-top: 0.2em;
+}
+
+.btn-menos,
+.btn-mas {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.input-cantidad {
+  width: 40px;
+  text-align: center;
+}
+
+.precio-producto {
+  text-align: right;
+}
+
+.total-producto {
+  text-align: right;
+}
 
 @media (min-width: 768px) {
   
