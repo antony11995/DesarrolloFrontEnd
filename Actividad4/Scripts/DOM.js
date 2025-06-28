@@ -33,7 +33,7 @@ function pintarProductosTabla(productos, carrito, currency) {
         tbody.append(clone);
     });
     addEventListeners(carrito, productos, currency);
-    // Inicializar el resumen vacío al cargar
+    // El resumen se inicializa vacío al cargar
     pintarResumenProductos([], currency, 0);
 }
 
