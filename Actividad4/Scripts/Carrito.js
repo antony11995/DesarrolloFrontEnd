@@ -24,16 +24,18 @@ class Carrito {
         let total = 0;
         let products = [];
         for (const sku in this.carrito) {
-            const producto = this.productos.find(p => p.sku === sku);
+            // Buscar por SKU en mayúsculas y minúsculas
+            const producto = this.productos.find(p => (p.sku || p.SKU) === sku);
             if (producto) {
                 const quantity = this.carrito[sku];
-                total += producto.precio * quantity;
+                // Usar nombre y precio correctos según la estructura
                 products.push({
                     sku: sku,
                     quantity: quantity,
-                    nombre: producto.nombre,
-                    precio: producto.precio
+                    nombre: producto.nombre || producto.title,
+                    precio: producto.precio !== undefined ? producto.precio : parseFloat(producto.price)
                 });
+                total += (producto.precio !== undefined ? producto.precio : parseFloat(producto.price)) * quantity;
             }
         }
         return {

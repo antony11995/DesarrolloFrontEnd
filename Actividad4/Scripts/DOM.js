@@ -4,12 +4,13 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
             let productos = Array.isArray(data.products) ? data.products : [];
             let currency = data.currency;
-            console.log('Productos recibidos de la API:', productos);
-            console.log('Moneda recibida de la API:', currency);
+            /* console.log('Productos recibidos de la API:', productos);
+            console.log('Moneda recibida de la API:', currency); */
             const carrito = new Carrito(productos, currency); // currency se pasa aquí
             pintarProductosTabla(productos, carrito, currency);
         })
         .catch(error => {
+            //esto es para vigilar si hay un error al obtener los productos
             console.error("Error al obtener los productos:", error);
         });
 });
@@ -29,9 +30,11 @@ function pintarProductosTabla(productos, carrito, currency) {
         clone.querySelector('.precio-producto').textContent = parseFloat(producto.price).toFixed(2) + currency;
         clone.querySelector('.total-producto').setAttribute('data-sku', producto.SKU);
         clone.querySelector('.total-producto').textContent = '0' + currency;
-        tbody.appendChild(clone);
+        tbody.append(clone);
     });
     addEventListeners(carrito, productos, currency);
+    // Inicializar el resumen vacío al cargar
+    pintarResumenProductos([], currency, 0);
 }
 
 function addEventListeners(carrito, productos, currency) {
@@ -69,5 +72,22 @@ function updateTotals(carrito, productos, currency) {
     });
     const carritoInfo = carrito.obtenerCarrito();
     document.getElementById('total-carrito').textContent = (carritoInfo.total || 0) + currency;
+    pintarResumenProductos(carritoInfo.products, currency, carritoInfo.total);
+}
+
+function pintarResumenProductos(products, currency, total) {
+    const resumenDiv = document.getElementById('resumen-productos');
+    if (!resumenDiv) return;
+    if (!products || products.length === 0) {
+        resumenDiv.innerHTML = '';
+        return;
+    }
+    let html = '<div class="resumen-lista">';
+    products.forEach(p => {
+        html += `<div class='resumen-item'><span>${p.nombre}</span><span style='float:right'>${(p.precio * p.quantity).toFixed(2)}${currency}</span></div>`;
+    });
+    html += '<hr style="margin: 12px 0; border: none; border-top: 2px solid #e0e0e0;">';
+    html += '</div>';
+    resumenDiv.innerHTML = html;
 }
 

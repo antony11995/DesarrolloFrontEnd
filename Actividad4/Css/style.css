@@ -142,6 +142,19 @@ body {
   font-weight: 700;
 }
 
+.resumen-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.resumen-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.08em;
+}
+
 @media (min-width: 768px) {
   
 }
