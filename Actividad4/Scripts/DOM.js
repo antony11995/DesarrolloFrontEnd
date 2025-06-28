@@ -3,9 +3,10 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => response.json())
         .then(data => {
             let productos = Array.isArray(data.products) ? data.products : [];
-            let currency = data.currency || '€';
+            let currency = data.currency;
             console.log('Productos recibidos de la API:', productos);
-            const carrito = new Carrito(productos, currency);
+            console.log('Moneda recibida de la API:', currency);
+            const carrito = new Carrito(productos, currency); // currency se pasa aquí
             pintarProductosTabla(productos, carrito, currency);
         })
         .catch(error => {

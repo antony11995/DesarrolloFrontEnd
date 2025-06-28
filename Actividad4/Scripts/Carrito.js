@@ -1,7 +1,8 @@
 class Carrito {
-    constructor(productos) {
+    constructor(productos, currency ) {
         this.productos = productos;
         this.carrito = {};
+        this.currency = currency;
     }
 
     actualizarUnidades(sku, unidades) {
@@ -37,7 +38,7 @@ class Carrito {
         }
         return {
             total: total.toFixed(2),
-            currency: '€',
+            currency: this.currency,
             products: products
         };
     }
